@@ -1176,7 +1176,7 @@ function! s:commits_sink(lines)
         if idx > 1
           execute 'tab sb' buf
         endif
-        execute 'Gdiff' sha
+        execute 'Gvdiffsplit' sha
       else
         " Since fugitive buffers are unlisted, we can't keep using 'e'
         let c = (cmd == 'e' && idx > 1) ? 'tab split' : cmd
